@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+  <StackLayout>
+    <Label text="Press the Home button to move the app on background. While on background the app should print messages on the console." class="message" textWrap="true"/>
+  </StackLayout>
+</Page>

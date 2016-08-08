@@ -1,0 +1,9 @@
+node_modules/
+platforms/
+lib/
+.vscode/
+hooks/
+app/*.js
+app/*.js.map
+/references.d.ts
+/tsconfig.json
