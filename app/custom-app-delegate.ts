@@ -11,8 +11,7 @@ export class CustomAppDelegate extends UIResponder implements UIApplicationDeleg
     public applicationDidEnterBackground(application: UIApplication) {
         console.log("Enter background");
         this.bgTask = application.beginBackgroundTaskWithNameExpirationHandler("MyTask", () => {
-            application.endBackgroundTask(this.bgTask);
-            this.bgTask = UIBackgroundTaskInvalid;
+            this.endBackgroundTask();
         });
 
         this.timerCounter = 5;
@@ -24,14 +23,20 @@ export class CustomAppDelegate extends UIResponder implements UIApplicationDeleg
         return true;
     }
 
+    private endBackgroundTask(): void {
+        if (this.timer) {
+            this.timer.invalidate();
+            this.timer = null;
+        }
+        this.timerCounter = 5;
+        UIApplication.sharedApplication().endBackgroundTask(this.bgTask);
+        this.bgTask = UIBackgroundTaskInvalid;
+        console.log("End of background task.");
+    }
+
     public runOnBackground(): void {
         if (this.timerCounter <= 0) {
-            // end of background task
-            this.timer.invalidate();
-            this.timerCounter = 5;
-            UIApplication.sharedApplication().endBackgroundTask(this.bgTask);
-            this.bgTask = UIBackgroundTaskInvalid;
-            console.log("End of background task.");
+            this.endBackgroundTask();
             return;
         }
         console.log(`${this.timerCounter} (the app is on background)`);
