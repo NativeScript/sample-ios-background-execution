@@ -29,7 +29,7 @@ export class CustomAppDelegate extends UIResponder implements UIApplicationDeleg
             this.timer = null;
         }
         this.timerCounter = 5;
-        UIApplication.sharedApplication().endBackgroundTask(this.bgTask);
+        UIApplication.sharedApplication.endBackgroundTask(this.bgTask);
         this.bgTask = UIBackgroundTaskInvalid;
         console.log("End of background task.");
     }
