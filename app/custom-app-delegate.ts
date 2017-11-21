@@ -19,7 +19,7 @@ export class CustomAppDelegate extends UIResponder implements UIApplicationDeleg
         this.timer = NSTimer.scheduledTimerWithTimeIntervalTargetSelectorUserInfoRepeats(2, this, "runOnBackground", null, true);
     }
 
-    public applicationDidFinishLaunchingWithOptions(application: UIApplication, launchOptions: NSDictionary): boolean {
+    public applicationDidFinishLaunchingWithOptions(application: UIApplication, launchOptions: NSDictionary<string, any>): boolean {
         return true;
     }
 
@@ -29,7 +29,7 @@ export class CustomAppDelegate extends UIResponder implements UIApplicationDeleg
             this.timer = null;
         }
         this.timerCounter = 5;
-        UIApplication.sharedApplication().endBackgroundTask(this.bgTask);
+        UIApplication.sharedApplication.endBackgroundTask(this.bgTask);
         this.bgTask = UIBackgroundTaskInvalid;
         console.log("End of background task.");
     }

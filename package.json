@@ -6,14 +6,15 @@
   "nativescript": {
     "id": "org.nativescript.BkgdExecExample",
     "tns-ios": {
-      "version": "2.1.1"
+      "version": "3.3.0"
     }
   },
   "dependencies": {
-    "tns-core-modules": "2.1.0"
+    "tns-core-modules": "^3.3.0"
   },
   "devDependencies": {
-    "nativescript-dev-typescript": "^0.3.0",
-    "typescript": "^1.8.10"
+    "nativescript-dev-typescript": "^0.5.0",
+    "tns-platform-declarations": "^3.3.0",
+    "typescript": "^2.5.0"
   }
 }

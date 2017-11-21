@@ -5,5 +5,5 @@ lib/
 hooks/
 app/*.js
 app/*.js.map
-/references.d.ts
 /tsconfig.json
+/package-lock.json
