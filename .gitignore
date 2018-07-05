@@ -3,7 +3,6 @@ platforms/
 lib/
 .vscode/
 hooks/
-app/*.js
-app/*.js.map
-/tsconfig.json
+*/**/*.js
+*/**/*.js.map
 /package-lock.json
