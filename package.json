@@ -4,25 +4,21 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.BkgdExecExample",
-    "tns-ios": {
-      "version": "5.1.0"
-    }
+    "id": "org.nativescript.BkgdExecExample"
   },
   "dependencies": {
-    "tns-core-modules": "5.1.0"
+    "tns-core-modules": "latest"
   },
   "devDependencies": {
-    "@types/chai": "latest",
-    "@types/mocha": "latest",
-    "@types/node": "latest",
-    "mocha": "latest",
-    "mocha-junit-reporter": "latest",
-    "mocha-multi": "latest",
+    "@types/chai": "~4.1.7",
+    "@types/mocha": "~5.2.5",
+    "@types/node": "~10.12.18",
+    "mocha": "~5.2.0",
+    "mochawesome": "~3.1.2",
     "nativescript-dev-appium": "next",
-    "nativescript-dev-typescript": "^0.7.2",
-    "nativescript-dev-webpack": "next",
-    "tns-platform-declarations": "^5.1.0",
+    "nativescript-dev-typescript": "latest",
+    "nativescript-dev-webpack": "latest",
+    "tns-platform-declarations": "latest",
     "typescript": "^3.1.1"
   },
   "scripts": {

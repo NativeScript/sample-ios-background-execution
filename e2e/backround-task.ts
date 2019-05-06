@@ -1,14 +1,14 @@
 import { AppiumDriver, createDriver, SearchOptions, LogType } from "nativescript-dev-appium";
 import { assert } from "chai";
 
-describe("background-tasks", () => {
+describe("background-tasks", async function () {
     let driver: AppiumDriver;
 
-    before(async () => {
+    before(async function () {
         driver = await createDriver();
     });
 
-    after(async () => {
+    after(async function () {
         await driver.quit();
         console.log("Quit driver!");
     });
@@ -19,12 +19,12 @@ describe("background-tasks", () => {
         }
     });
 
-    it("verify app is running", async () => {
+    it("verify app is running", async function () {
         const label = await driver.findElementByText("Press the Home", SearchOptions.contains);
         assert.isTrue(await label.isDisplayed());
     });
 
-    it("should find an element by type", async () => {
+    it("should find an element by type", async function () {
         await driver.backgroundApp(7);
         const logs = await driver.getlog(LogType.syslog);
         let hasLoggedStartLogging = false;

@@ -6,13 +6,14 @@
         "emitDecoratorMetadata": true,
         "importHelpers": false,
         "types": [
-            "node",
             "mocha",
-            "chai"
+            "chai",
+            "node"
         ],
         "lib": [
             "es2015",
             "dom"
-        ]
+        ],
+        "baseUrl": "."
     }
 }
