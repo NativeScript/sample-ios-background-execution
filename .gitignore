@@ -7,3 +7,4 @@ hooks/
 */**/*.js.map
 /package-lock.json
 mochawesome-report
+verify-report

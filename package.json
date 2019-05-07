@@ -4,10 +4,13 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.BkgdExecExample"
+    "id": "org.nativescript.BkgdExecExample",
+    "tns-ios": {
+      "version": "next"
+    }
   },
   "dependencies": {
-    "tns-core-modules": "latest"
+    "tns-core-modules": "next"
   },
   "devDependencies": {
     "@types/chai": "~4.1.7",
@@ -16,13 +19,15 @@
     "mocha": "~5.2.0",
     "mochawesome": "~3.1.2",
     "nativescript-dev-appium": "next",
-    "nativescript-dev-typescript": "latest",
-    "nativescript-dev-webpack": "latest",
-    "tns-platform-declarations": "latest",
+    "nativescript-dev-typescript": "^0.9.0",
+    "nativescript-dev-webpack": "next",
+    "tns-platform-declarations": "next",
     "typescript": "^3.1.1"
   },
   "scripts": {
     "e2e": "tsc -p e2e && mocha --opts ./e2e/config/mocha.opts",
-    "e2e-watch": "tsc -p e2e --watch"
+    "e2e-watch": "tsc -p e2e --watch",
+    "ns-verify-bundle": "ns-verify-bundle",
+    "update-ns-webpack": "update-ns-webpack"
   }
 }
