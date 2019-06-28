@@ -2,4 +2,4 @@
 import { CustomAppDelegate } from "./custom-app-delegate";
 
 application.ios.delegate = CustomAppDelegate;
-application.start({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
