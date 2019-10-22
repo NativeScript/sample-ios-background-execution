@@ -3,13 +3,17 @@ export class CustomAppDelegate extends UIResponder implements UIApplicationDeleg
     public static ObjCExposedMethods = {
         "runOnBackground": { returns: interop.types.void }
     };
-    
+
     private bgTask;
     private timer;
     private timerCounter;
 
     public applicationDidEnterBackground(application: UIApplication) {
-        console.log("Enter background");
+        if (this.timer) {
+            console.log(`Background task is still running. Restarting it.`);
+            this.endBackgroundTask();
+        }
+        console.log(`Enter background. Allowed background time remaining: ${UIApplication.sharedApplication.backgroundTimeRemaining}`);
         this.bgTask = application.beginBackgroundTaskWithNameExpirationHandler("MyTask", () => {
             this.endBackgroundTask();
         });
@@ -39,7 +43,7 @@ export class CustomAppDelegate extends UIResponder implements UIApplicationDeleg
             this.endBackgroundTask();
             return;
         }
-        console.log(`${this.timerCounter} (the app is on background)`);
+        console.log(`${this.timerCounter} (the app is on background, allowed background time remaining: ${UIApplication.sharedApplication.backgroundTimeRemaining})`);
         this.timerCounter--;
     }
 }
