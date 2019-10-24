@@ -15,3 +15,20 @@ A sample project demonstrating how NativeScript application can execute JavaScri
     npm install
     tns run ios
 ```
+
+# Simulating Background Task launch
+
+You can launch the background processing task from Xcode following the instructions in
+[this article](https://developer.apple.com/documentation/backgroundtasks/starting_and_terminating_tasks_during_development). In short:
+* Start the app from Xcode
+* Cause scheduling of the task by going to background and comeing back to the app on the device
+* Pause in the debugger
+* Execute the following LLDB command:
+ `e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"org.nativescript.BkgdExecExample.LongTask"]`
+ * Continue execution
+ * The task starts (it goes on indefinitely until the system expires it)
+ * Whenever you want to simulate its expiration pause in the Xcode debugger again
+ * Execute the following LLDB command:
+ `e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"org.nativescript.BkgdExecExample.LongTask"]`
+
+
